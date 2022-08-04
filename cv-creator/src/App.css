@@ -1,0 +1,52 @@
+#root {
+  /* CV Dimensions */
+  --cvWidth: 612px;
+  --cvHeight: 792px;
+
+  /* Sidebar / Main Content Dimensions */
+    --sidebarWidth: 185px;
+    --marginLeftMainContent: calc(var(--sidebarWidth) + 1px);
+    --mainContentWidth: calc(var(--cvWidth) - var(--marginLeftMainContent));
+
+    /* Sidebar Variables */
+    --sidebarColor: #1B1BB1;
+}
+
+/* Intial App Setup */
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: coral;
+  margin: 0;
+  padding: 0;
+}
+
+.cv-container {
+  display: flex;
+  border: 1px solid black;
+  width: var(--cvWidth);
+  height:  var(--cvHeight);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebarWidth);
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--sidebarColor);
+}
+
+/* Main Content */
+.content-container {
+  /* margin-left: var(--marginLeftMainContent); */
+  border: 1px solid red;
+  min-width: var(--mainContentWidth);
+}

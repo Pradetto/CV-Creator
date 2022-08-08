@@ -1,31 +1,30 @@
 import React, { useState } from "react";
 
-const ProfileEdit = (props) => {
-  const [enteredURL, setURL] = useState("");
+const TechnicalEdit = (props) => {
+  const [enteredSkill, setSkill] = useState("");
 
-  const imageURLHandler = (event) => {
-    setURL(event.target.value);
+  const technicalSkillHandler = (event) => {
+    setSkill(event.target.value);
   };
 
-  const imageSubmitHandler = (event) => {
+  const technicalSubmitHandler = (event) => {
     event.preventDefault();
-    const imageURL = enteredURL;
-    props.saveURLData(imageURL);
-    setURL(enteredURL);
+    props.saveData(enteredSkill);
+    setSkill(enteredSkill);
   };
   return (
-    <div className="image-edit edit">
+    <div className="technical-edit edit">
       <form
         action=""
-        className="image-edit-form form-container sidebar-form"
-        onSubmit={imageSubmitHandler}
+        className="technical-edit-form form-container sidebar-form"
+        onSubmit={technicalSubmitHandler}
       >
-        <label className="form-label">URL</label>
+        <label className="form-label">Add Skill</label>
         <input
           className="form-input"
           type="text"
-          onChange={imageURLHandler}
-          value={enteredURL}
+          onChange={technicalSkillHandler}
+          value={enteredSkill}
         />
         <div className="form-button-container">
           <button
@@ -48,4 +47,4 @@ const ProfileEdit = (props) => {
   );
 };
 
-export default ProfileEdit;
+export default TechnicalEdit;

@@ -9,7 +9,12 @@
     --mainContentWidth: calc(var(--cvWidth) - var(--marginLeftMainContent));
 
     /* Sidebar Variables */
-    --sidebarColor: #1B1BB1;
+    --sidebarColor: #3b3bbb;
+    --sidebarFormWidth: 150px;
+    --editBackgroundColor: #82afb4;
+    --sidebarSubcontentContainerWidth: 185px;
+    --sidebarSubcontentContainerHeight: 185px;
+    
 }
 
 /* Intial App Setup */
@@ -37,8 +42,13 @@
 .edit {
   display: flex;
   flex-direction: column;
-  background-color: #82afb4;
+
   padding: 1rem;
+
+  position: relative;
+  top: -125px;
+  z-index: 1;
+  margin-bottom: -125px;
 }
 
 .editActive .edit{
@@ -63,8 +73,8 @@
 /* Profile Picture */
 
 .image-container {
-  height: 185;
-  width: 185;
+  height: var(--sidebarSubcontentContainerHeight);
+  width: var(--sidebarSubcontentContainerWidth);
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -80,13 +90,76 @@
   border-radius: 50%;
 }
 
-.image-edit {
+/* .image-edit {
   position: relative;
-  top: -100px;
+  top: -125px;
   z-index: 1;
-  margin-bottom: -100px;
+  margin-bottom: -125px;
+} */
+
+
+/* sidebar subcontent */
+h4{
+  padding: 0;
+  margin: 0;
 }
 
+.sidebar-subcontent {
+  color: white;
+  /* height: var(--sidebarSubcontentContainerHeight);
+  width: var(--sidebarSubcontentContainerWidth); */
+}
+/* technical skills */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Edit Forms */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--editBackgroundColor);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.sidebar-form {
+  max-width: var(--sidebarWidth);
+}
+
+.form-label {
+  color: white;
+  font-weight: bold;
+  margin: 2.5px;
+}
+
+.form-input {
+  border: 3px solid white;
+  border-radius: 12px;
+  padding: 5px;
+  background-color: var(--editBackgroundColor);
+  margin: 2.5px;
+  color: white;
+}
+
+.form-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-button {
+  background-color: white;
+  color: var(--editBackgroundColor);
+  border: 1px solid white;
+  margin: 5px;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
 /* Main Content */
 .content-container {
   /* margin-left: var(--marginLeftMainContent); */

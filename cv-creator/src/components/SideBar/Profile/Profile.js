@@ -12,11 +12,13 @@ const Profile = () => {
   return (
     <div
       className={
-        hovered ? "image-container editInactive" : "image-container editActive"
+        hovered
+          ? "image-container sidebar-subcontent editInactive"
+          : "image-container sidebar-subcontent editActive"
       }
       onMouseEnter={toggleHover}
     >
-      <div className="background-image edit-container">
+      <div className="background-image">
         <img
           src={
             urlData

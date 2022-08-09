@@ -73,6 +73,7 @@
   justify-content: flex-start;
   background-color: var(--sidebarColor);
   align-items: center;
+  gap: 1.5rem;
 }
 
 /* Profile Picture */
@@ -108,11 +109,16 @@ h4{
   padding: 0;
   margin: 0;
 }
+.skills-header {
+  border-bottom: 1px solid white;
+}
 
 .sidebar-subcontent {
   color: white;
   /* height: var(--sidebarSubcontentContainerHeight);
   width: var(--sidebarSubcontentContainerWidth); */
+  text-align: left;
+  min-width: var(--sidebarFormWidth);
 }
 /* technical skills */
 ul {

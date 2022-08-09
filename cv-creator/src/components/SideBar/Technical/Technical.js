@@ -30,12 +30,24 @@ const Technical = () => {
   const toggleHover = () => setHovered(!hovered);
 
   const onSaveDataHandler = (enteredSkill) => {
-    setData(enteredSkill);
+    setData((data) => {
+      return [enteredSkill, ...data];
+    });
+    console.log(enteredSkill);
+  };
+
+  const listDeleteHandler = (event) => {
+    const listText = event.target.textContent;
+    setData((data) =>
+      data.filter((item) => {
+        return item.skill !== listText;
+      })
+    );
   };
   return (
     <div
       className={
-        hovered
+        !hovered
           ? "technical-container sidebar-subcontent editInactive"
           : "technical-container sidebar-subcontent editActive"
       }
@@ -45,7 +57,9 @@ const Technical = () => {
         <h4 className="skills-header">Technical Skills</h4>
         <ul className="skills-list">
           {data.map((item) => (
-            <li key={item.id}>{item.skill}</li>
+            <li key={item.id} id={item.id} onClick={listDeleteHandler}>
+              {item.skill}
+            </li>
           ))}
         </ul>
         <TechnicalEdit saveData={onSaveDataHandler} toggleHover={toggleHover} />

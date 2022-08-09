@@ -12,7 +12,7 @@ const Profile = () => {
   return (
     <div
       className={
-        hovered
+        !hovered
           ? "image-container sidebar-subcontent editInactive"
           : "image-container sidebar-subcontent editActive"
       }

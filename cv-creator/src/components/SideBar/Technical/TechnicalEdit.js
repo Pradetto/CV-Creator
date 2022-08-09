@@ -9,8 +9,14 @@ const TechnicalEdit = (props) => {
 
   const technicalSubmitHandler = (event) => {
     event.preventDefault();
-    props.saveData(enteredSkill);
-    setSkill(enteredSkill);
+
+    const enteredData = {
+      id: Math.random(),
+      category: "technical",
+      skill: enteredSkill,
+    };
+    props.saveData(enteredData);
+    setSkill("");
   };
   return (
     <div className="technical-edit edit">

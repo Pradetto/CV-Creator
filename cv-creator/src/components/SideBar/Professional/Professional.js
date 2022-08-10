@@ -51,13 +51,14 @@ const Professional = () => {
           ? "professional-container sidebar-subcontent editInactive"
           : "professional-container sidebar-subcontent editActive"
       }
-      onMouseEnter={toggleHover}
     >
       <div className="skills-container">
-        <h4 className="skills-header">Professional Skills</h4>
+        <h4 className="skills-header" onMouseEnter={toggleHover}>
+          Professional Skills
+        </h4>
         <ul className="skills-list">
           {data.map((item) => (
-            <li key={item.id} id={item.id} onClick={listDeleteHandler}>
+            <li key={item.id} onClick={listDeleteHandler}>
               {item.skill}
             </li>
           ))}

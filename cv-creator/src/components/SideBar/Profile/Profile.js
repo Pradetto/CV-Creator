@@ -23,7 +23,7 @@ const Profile = () => {
           src={
             urlData
               ? urlData
-              : "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+              : "https://media-exp1.licdn.com/dms/image/C4E03AQEv0VMJNzSOSA/profile-displayphoto-shrink_200_200/0/1643136677369?e=1665619200&v=beta&t=j51LUOKtpvC0sdo0GQwdDRQFKmIvIMCbctyv7I5ld50"
           }
           alt=""
           className="image"

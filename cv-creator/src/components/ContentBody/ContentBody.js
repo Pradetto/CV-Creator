@@ -1,4 +1,4 @@
-import Header from "./Header/Header";
+import Title from "./Title/Title";
 import Projects from "./Projects/Projects";
 import Work from "./Work/Work";
 import Education from "./Education/Education";
@@ -6,7 +6,7 @@ import Education from "./Education/Education";
 const ContentBody = () => {
   return (
     <div className="content-container">
-      <Header />
+      <Title />
       <Projects />
       <Work />
       <Education />

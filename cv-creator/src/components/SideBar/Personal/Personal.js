@@ -51,10 +51,11 @@ const Personal = () => {
           ? "personal-container sidebar-subcontent editInactive"
           : "personal-container sidebar-subcontent editActive"
       }
-      onMouseEnter={toggleHover}
     >
       <div className="skills-container">
-        <h4 className="skills-header">Personal Skills</h4>
+        <h4 className="skills-header" onMouseEnter={toggleHover}>
+          Personal Skills
+        </h4>
         <ul className="skills-list">
           {data.map((item) => (
             <li key={item.id} id={item.id} onClick={listDeleteHandler}>

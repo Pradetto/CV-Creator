@@ -1,3 +1,6 @@
+html {
+  background-color: #EEEEEE;
+}
 #root {
   /* CV Dimensions */
   --cvWidth: 612px;
@@ -7,14 +10,16 @@
     --sidebarWidth: 185px;
     --marginLeftMainContent: calc(var(--sidebarWidth) + 1px);
     --mainContentWidth: calc(var(--cvWidth) - var(--marginLeftMainContent));
+    --mainContentPadding: 12px;
+    --mainContentBlue: rgb(93, 157, 178);
 
     /* Sidebar Variables */
-    --sidebarColor: #3b3bbb;
+    --sidebarColor: #404099;
     --sidebarFormWidth: 150px;
     --editBackgroundColor: #82afb4;
     --sidebarSubcontentContainerWidth: 185px;
     --sidebarSubcontentContainerHeight: 185px;
-    
+
 }
 
 /* Intial App Setup */
@@ -24,7 +29,7 @@
   justify-content: space-around;
   height: 100vh;
   width: 100vw;
-  background-color: coral;
+  background-color: #EEEEEE;
   margin: 0;
   padding: 1rem;
 }
@@ -52,8 +57,10 @@
 
   position: relative;
   top: -125px;
+  left: -100px;
   z-index: 1;
   margin-bottom: -125px;
+  margin-left: -150px;
 }
 
 .editActive .edit{
@@ -67,7 +74,7 @@
 /* Sidebar */
 .sidebar {
   width: var(--sidebarWidth);
-  border: 1px solid black;
+  border-right: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -121,7 +128,7 @@ h4{
   min-width: var(--sidebarFormWidth);
 }
 /* technical skills */
-ul {
+.skills-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -174,8 +181,57 @@ ul {
 /* Main Content */
 .content-container {
   /* margin-left: var(--marginLeftMainContent); */
-  border: 1px solid red;
   min-width: var(--mainContentWidth);
 }
 
 
+/* Title */
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  padding: 12px 32px;
+}
+.title-name, .title-position {
+  margin: 5px;
+  padding: 0;
+}
+
+.title-name {
+  font-size: 38px ;
+}
+
+.title-position {
+  color: var(--mainContentBlue) ;
+}
+
+.break-line {
+  width: 18%;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+
+
+/* main section css */
+.main-section-header {
+  margin: 0;
+  padding: 0 var(--mainContentPadding);
+  color: var(--mainContentBlue);
+}
+
+.main-section-subHeader {
+  margin: 0;
+  padding: 0 var(--mainContentPadding);
+  font-size: 14px;
+}
+
+.project-list {
+  margin: 0;
+  font-size: 13px;
+}
+
+.sub-project-container {
+  margin: 0;
+}

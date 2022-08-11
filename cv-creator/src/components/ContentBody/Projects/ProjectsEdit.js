@@ -29,7 +29,6 @@ const ProjectsEdit = (props) => {
     ];
 
     props.saveData(enteredData);
-    console.log("Passed up this data", enteredData);
     setNarrative("");
     setProjectName("");
   };

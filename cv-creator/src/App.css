@@ -63,6 +63,20 @@ html {
   margin-left: -150px;
 }
 
+.edit-main {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem;
+
+  position: relative;
+  top: -125px;
+  /* right: -100px; */
+  z-index: 1;
+  margin-bottom: -125px;
+  /* margin-right: -150px; */
+}
+
 .editActive .edit{
   display: 'none';
 }
@@ -70,6 +84,14 @@ html {
 .editInactive .edit{
   display: none;
 }
+.editActive .edit-main{
+  display: 'none';
+}
+
+.editInactive .edit-main{
+  display: none;
+}
+
 
 /* Sidebar */
 .sidebar {

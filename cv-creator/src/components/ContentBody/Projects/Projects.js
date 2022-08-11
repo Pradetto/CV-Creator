@@ -8,7 +8,7 @@ const dummyData = [
     narrative: [
       {
         id: 1,
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, possimus. Ex sunt harum, impedit sint facilis ipsam eligendi nam nobis unde officia recusandae eum placeat ab! Quo, tempora amet.",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, possimus. Ex sunt harum, impedit sint facilis ipsam eligendi nam nobis unde officia recusandae eum placeat ab! Quo, ",
       },
       {
         id: 2,
@@ -22,7 +22,7 @@ const dummyData = [
     narrative: [
       {
         id: 1,
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, possimus. Ex sunt harum, impedit sint facilis ipsam eligendi nam nobis unde officia recusandae eum placeat ab! Quo, tempora amet.",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, possimus. Ex sunt harum, impedit sint facilis ipsam eligendi nam nobis unde officia t.",
       },
       {
         id: 2,
@@ -57,6 +57,24 @@ const Projects = () => {
       ];
     });
   };
+
+  const listDeleteHandler = (e) => {
+    const dataIndex = Number(e.target.className);
+    const text = e.target.textContent;
+    setData((prev) => {
+      let ans = prev[dataIndex].narrative.filter((item) => {
+        return item.text !== text;
+      });
+      return [
+        ...prev.slice(0, dataIndex),
+        {
+          ...prev[dataIndex],
+          narrative: [...ans],
+        },
+        ...prev.slice(dataIndex + 1),
+      ];
+    });
+  };
   return (
     <div
       className={
@@ -69,14 +87,22 @@ const Projects = () => {
         Projects
       </h3>
       <div className="project-container">
-        {data.map((item) => {
+        {data.map((item, index) => {
           return (
             <React.Fragment key={item.id}>
               <div className="sub-project-container">
                 <h4 className="main-section-subHeader">{item.projectName}</h4>
                 <ul className="project-list" key={item.id}>
                   {item.narrative.map((point) => {
-                    return <li key={point.id}>{point.text}</li>;
+                    return (
+                      <li
+                        key={point.id}
+                        className={index}
+                        onClick={listDeleteHandler}
+                      >
+                        {point.text}
+                      </li>
+                    );
                   })}
                 </ul>
               </div>

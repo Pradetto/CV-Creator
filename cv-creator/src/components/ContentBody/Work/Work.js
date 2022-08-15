@@ -4,29 +4,29 @@ import WorkEdit from "./WorkEdit";
 const dummyData = [
   {
     id: 1,
-    projectName: "Company 1",
+    projectName: "Company | Position | Date",
     narrative: [
       {
         id: 1,
-        text: "Saved 100 million",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       },
       {
         id: 2,
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, possimus. Ex sunt harum, impedit",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing",
       },
     ],
   },
   {
     id: 2,
-    projectName: "Company 2",
+    projectName: "LGSTX | Business Analyst | June 2019 - Present",
     narrative: [
       {
         id: 1,
-        text: "Won 100 million in contracts",
+        text: "I love work :)",
       },
       {
         id: 2,
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, possimus. Ex sunt harum,",
+        text: "Saved XXX amount of money by doing xyz",
       },
     ],
   },
@@ -58,6 +58,14 @@ const Work = () => {
     });
   };
 
+  const topicDeleteHandler = (e) => {
+    const text = e.target.textContent;
+    setData((prev) => {
+      return prev.filter((item) => {
+        return item.projectName !== text;
+      });
+    });
+  };
   const listDeleteHandler = (e) => {
     const dataIndex = Number(e.target.className);
     const text = e.target.textContent;
@@ -65,6 +73,7 @@ const Work = () => {
       let ans = prev[dataIndex].narrative.filter((item) => {
         return item.text !== text;
       });
+
       return [
         ...prev.slice(0, dataIndex),
         {
@@ -91,7 +100,12 @@ const Work = () => {
           return (
             <React.Fragment key={item.id}>
               <div className="sub-project-container">
-                <h4 className="main-section-subHeader">{item.projectName}</h4>
+                <h4
+                  className="main-section-subHeader"
+                  onClick={topicDeleteHandler}
+                >
+                  {item.projectName}
+                </h4>
                 <ul className="project-list" key={item.id}>
                   {item.narrative.map((point) => {
                     return (

@@ -265,3 +265,17 @@ h4{
 .main-content-subcontent {
   margin-bottom: 12px;
 }
+
+
+/* Instructions */
+.instructions-container {
+  width: 400px;
+}
+.instructions-header {
+  padding: 0;
+  font-size: 1rem;
+}
+.instructions-para {
+  margin: 0;
+  padding: 0;
+}

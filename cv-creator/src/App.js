@@ -11,7 +11,7 @@ function App() {
         <Instructions />
         <h6>Created By: Michael Pradetto</h6>
       </div>
-      <div className="cv-container">
+      <div className="cv-container" id="pdf">
         <Sidebar />
         <ContentBody />
       </div>

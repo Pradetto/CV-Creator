@@ -257,3 +257,11 @@ h4{
 .sub-project-container {
   margin: 0;
 }
+
+.bold {
+  font-weight: bold;
+}
+
+.main-content-subcontent {
+  margin-bottom: 12px;
+}

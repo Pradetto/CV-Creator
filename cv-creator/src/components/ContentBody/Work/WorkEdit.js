@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ProjectsEdit = (props) => {
+const WorkEdit = (props) => {
   const [projectName, setProjectName] = useState("");
   const [narrative, setNarrative] = useState("");
 
@@ -41,7 +41,7 @@ const ProjectsEdit = (props) => {
         className="form-container main-content-form"
       >
         <label htmlFor="" className="form-label">
-          Project Name
+          Work Name
         </label>
         <input
           type="text"
@@ -80,4 +80,4 @@ const ProjectsEdit = (props) => {
   );
 };
 
-export default ProjectsEdit;
+export default WorkEdit;

@@ -58,6 +58,14 @@ const Projects = () => {
     });
   };
 
+  const topicDeleteHandler = (e) => {
+    const text = e.target.textContent;
+    setData((prev) => {
+      return prev.filter((item) => {
+        return item.projectName !== text;
+      });
+    });
+  };
   const listDeleteHandler = (e) => {
     const dataIndex = Number(e.target.className);
     const text = e.target.textContent;
@@ -65,6 +73,7 @@ const Projects = () => {
       let ans = prev[dataIndex].narrative.filter((item) => {
         return item.text !== text;
       });
+
       return [
         ...prev.slice(0, dataIndex),
         {
@@ -91,7 +100,12 @@ const Projects = () => {
           return (
             <React.Fragment key={item.id}>
               <div className="sub-project-container">
-                <h4 className="main-section-subHeader">{item.projectName}</h4>
+                <h4
+                  className="main-section-subHeader"
+                  onClick={topicDeleteHandler}
+                >
+                  {item.projectName}
+                </h4>
                 <ul className="project-list" key={item.id}>
                   {item.narrative.map((point) => {
                     return (
